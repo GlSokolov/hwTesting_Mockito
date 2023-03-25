@@ -22,7 +22,7 @@ class UserServiceImplTest {
     public static final String CORRECT_USERNAME = "Глеб Соколов";
     public static final String INCORRECT_USERNAME = "Денис Петров";
     public static final User CORRECT_USER = new User("Глеб Соколов", 24, "gl_sokolov");
-    public static final User INCORRECT_USER = new User("Глеб Соколов,,i", 26, "zxc");
+    public static final User INCORRECT_USER = new User("Денис Петров", 26, "zxc");
 
 
 
