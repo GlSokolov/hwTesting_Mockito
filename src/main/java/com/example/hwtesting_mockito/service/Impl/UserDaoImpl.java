@@ -16,16 +16,11 @@ public class UserDaoImpl implements UserDao {
     private final HashSet<User> userList = new HashSet<>(List.of(USER1, USER2, USER3));
 
     @Override
-    public String getUserByName(String userName) {
-        try {
-            userList.stream()
-                    .filter(user -> user.getFullName().equals(userName))
-                    .findAny()
-                    .orElseThrow(() -> new NotFoundException("<Пользователь не найден>"));
-            return userName;
-        } catch (NotFoundException e) {
-            return null;
-        }
+    public User getUserByName(String userName) {
+        return userList.stream()
+                .filter(user -> user.getFullName().equals(userName))
+                .findAny()
+                .orElse(null);
     }
 
     @Override

@@ -34,15 +34,19 @@ class UserServiceImplTest {
 
 
     @Test
-    void shouldCheckForUserExistenceWithDifferentOutcomes() {
+    void shouldCheckForUserExistence() {
 
-        when(userDaoMock.getUserByName(CORRECT_USERNAME)).thenReturn(CORRECT_USERNAME);
+        when(userDaoMock.getUserByName(CORRECT_USERNAME)).thenReturn(CORRECT_USER);
         assertTrue(out.checkUserExist(CORRECT_USER));
 
-//        when(userDaoMock.getUserByName(INCORRECT_USERNAME)).thenReturn(String.valueOf(false));
-//        assertEquals(out.checkUserExist(INCORRECT_USER), INCORRECT_USER);
+    }
 
+    @Test
+    void shouldCheckForUserNonExistence() {
 
+        when(userDaoMock.getUserByName(INCORRECT_USERNAME)).thenReturn(null);
+        assertFalse(out.checkUserExist(INCORRECT_USER));
 
     }
+
 }
