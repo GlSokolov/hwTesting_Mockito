@@ -44,7 +44,7 @@ class UserServiceImplTest {
     @Test
     void shouldCheckForUserNonExistence() {
 
-        when(userDaoMock.getUserByName(INCORRECT_USERNAME)).thenReturn(null);
+        when(userDaoMock.getUserByName(INCORRECT_USERNAME)).thenThrow(NotFoundException.class);
         assertFalse(out.checkUserExist(INCORRECT_USER));
 
     }
