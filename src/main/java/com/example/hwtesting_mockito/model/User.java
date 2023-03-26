@@ -12,9 +12,9 @@ import lombok.Setter;
 @EqualsAndHashCode
 public class User {
 
-    String FullName;
-    String age;
-    String login;
+   private final String FullName;
+   private final int age;
+   private final String login;
 
     @Override
     public String toString() {

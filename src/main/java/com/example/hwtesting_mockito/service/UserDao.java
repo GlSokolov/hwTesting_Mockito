@@ -6,7 +6,7 @@ import java.util.HashSet;
 
 public interface UserDao {
 
-    String getUserByName (String userName);
+    User getUserByName (String userName);
     HashSet<User> findAllUsers ();
 
 }
